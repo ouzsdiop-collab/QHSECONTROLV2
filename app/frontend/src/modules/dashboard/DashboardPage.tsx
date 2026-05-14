@@ -9,6 +9,7 @@ import { DashboardKpis } from './DashboardKpis';
 import { DashboardQuickActions } from './DashboardQuickActions';
 import { KpiDetailDrawer } from './KpiDetailDrawer';
 import { PriorityPanel } from './PriorityPanel';
+import { ScoreSummaryCard } from './ScoreSummaryCard';
 import { dashboardService } from './dashboardService';
 import { DashboardData, DashboardFilterState, DashboardKpi } from './DashboardTypes';
 
