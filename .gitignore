@@ -1,0 +1,10 @@
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.env
+.env.*
+*.log
+
+reference/extracted/qhse-control-v1/
