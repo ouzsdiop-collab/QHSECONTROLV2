@@ -1,3 +1,4 @@
+import { UserRole } from '@qhse/shared';
 import { useMemo, useState } from 'react';
 import { QuickActionButton } from '../../components/ui/QuickActionButton';
 import { Tabs } from '../../components/ui/Tabs';
@@ -9,14 +10,15 @@ const modeTabs: { id: DashboardQuickActionMode; label: string }[] = [
   { id: 'essential', label: 'Mode Essentiel' },
   { id: 'expert', label: 'Mode Expert' },
   { id: 'field', label: 'Mode Terrain' },
-  { id: 'admin', label: 'Mode Admin' },
+  { id: 'company_admin', label: 'Paramètres entreprise' },
 ];
+
+const mockCurrentRole: UserRole = UserRole.COMPANY_ADMIN;
 
 export function DashboardQuickActions() {
   const [mode, setMode] = useState<DashboardQuickActionMode>('global');
   const [feedback, setFeedback] = useState('Sélectionnez un raccourci pour agir immédiatement.');
-
-  const actions = useMemo(() => dashboardQuickActionsService.listByMode(mode), [mode]);
+  const actions = useMemo(() => dashboardQuickActionsService.listByMode(mode, mockCurrentRole), [mode]);
 
   return (
     <section className="card section-gap">

@@ -1,3 +1,4 @@
+import { UserRole } from '@qhse/shared';
 import {
   Activity,
   AlertTriangle,
@@ -52,9 +53,10 @@ export const dashboardQuickActionsMock: DashboardQuickAction[] = [
   { id: 'field-sds', label: 'Consulter FDS', hint: 'Accès fiche de sécurité', mode: 'field', icon: FileText, feedback: 'Consultation FDS simulée.' },
   { id: 'field-sync', label: 'Synchroniser', hint: 'Envoyer les brouillons offline', mode: 'field', icon: ArrowUpCircle, feedback: 'Synchronisation simulée.' },
 
-  { id: 'admin-create-company', label: 'Créer entreprise', hint: 'Initialiser un tenant', mode: 'admin', icon: Building2, feedback: 'Création entreprise à venir (placeholder).' },
-  { id: 'admin-add-user', label: 'Ajouter utilisateur', hint: 'Inviter un collaborateur', mode: 'admin', icon: Users, feedback: 'Ajout utilisateur simulé.' },
-  { id: 'admin-enable-module', label: 'Activer module', hint: 'Piloter les fonctionnalités', mode: 'admin', icon: UserCog, feedback: 'Activation module simulée.' },
-  { id: 'admin-import-errors', label: 'Voir imports en erreur', hint: 'Corriger les rejets', mode: 'admin', icon: Factory, feedback: 'Erreurs d\'import listées (placeholder).' },
-  { id: 'admin-logs', label: 'Voir logs', hint: 'Audit technique rapide', mode: 'admin', icon: ClipboardList, feedback: 'Console logs prête (placeholder).' },
+  { id: 'company-users', label: 'Utilisateurs', hint: 'Gérer les comptes de l\'entreprise', mode: 'company_admin', icon: Users, feedback: 'Gestion utilisateurs entreprise (placeholder).', visibleForRoles: [UserRole.COMPANY_OWNER, UserRole.COMPANY_ADMIN] },
+  { id: 'company-sites-services', label: 'Sites & services', hint: 'Structurer le périmètre opérationnel', mode: 'company_admin', icon: Building2, feedback: 'Gestion sites & services entreprise (placeholder).', visibleForRoles: [UserRole.COMPANY_OWNER, UserRole.COMPANY_ADMIN] },
+  { id: 'company-iso-goals', label: 'Objectifs ISO', hint: 'Piloter les objectifs du compte', mode: 'company_admin', icon: ShieldCheck, feedback: 'Objectifs ISO entreprise (placeholder).', visibleForRoles: [UserRole.COMPANY_OWNER, UserRole.COMPANY_ADMIN] },
+  { id: 'company-modules', label: 'Modules', hint: 'Activer les modules du compte', mode: 'company_admin', icon: UserCog, feedback: 'Modules entreprise (placeholder).', visibleForRoles: [UserRole.COMPANY_OWNER, UserRole.COMPANY_ADMIN] },
+  { id: 'company-import-errors', label: 'Voir imports en erreur', hint: 'Corriger les rejets', mode: 'company_admin', icon: Factory, feedback: 'Erreurs d\'import entreprise (placeholder).', visibleForRoles: [UserRole.COMPANY_OWNER, UserRole.COMPANY_ADMIN] },
+  { id: 'company-logs', label: 'Voir logs', hint: 'Audit technique du compte', mode: 'company_admin', icon: ClipboardList, feedback: 'Logs entreprise (placeholder).', visibleForRoles: [UserRole.COMPANY_OWNER, UserRole.COMPANY_ADMIN] },
 ];
