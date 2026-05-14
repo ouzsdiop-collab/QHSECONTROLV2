@@ -5,5 +5,5 @@ const icons: Record<'danger' | 'warning' | 'info' | 'success', LucideIcon> = { d
 
 export function AlertCard({ level, title, message }: { level: 'danger' | 'warning' | 'info' | 'success'; title: string; message: string }) {
   const Icon = icons[level];
-  return <Card><strong className="alert-title"><Icon size={16} /> {title}</strong><p className="muted">{message}</p></Card>;
+  return <Card className={`alert-card alert-card--${level}`}><strong className="alert-title"><Icon size={16} /> {title}</strong><p className="muted">{message}</p></Card>;
 }
