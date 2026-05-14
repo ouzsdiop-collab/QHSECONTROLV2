@@ -1,4 +1,4 @@
-import { ImportStatus } from '../enums/statuses';
+import { ImportStatus } from '../enums/statuses.js';
 
 export interface ImportBatch {
   id: string;

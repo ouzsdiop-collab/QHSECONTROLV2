@@ -1,4 +1,4 @@
-import { ActionStatus, IncidentStatus, SeverityLevel } from '../enums/statuses';
+import { ActionStatus, IncidentStatus, SeverityLevel } from '../enums/statuses.js';
 
 export interface QhseKpi {
   key: string;

@@ -1,4 +1,4 @@
-import { OfflineSyncStatus } from '../enums/sync';
+import { OfflineSyncStatus } from '../enums/sync.js';
 
 export interface OfflineQueueItem {
   id: string;

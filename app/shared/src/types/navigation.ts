@@ -1,5 +1,5 @@
-import { AppMode } from '../enums/modes';
-import { ModuleKey } from '../enums/modules';
+import { AppMode } from '../enums/modes.js';
+import { ModuleKey } from '../enums/modules.js';
 
 export interface NavigationItem {
   label: string;

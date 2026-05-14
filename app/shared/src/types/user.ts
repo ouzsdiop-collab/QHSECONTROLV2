@@ -1,5 +1,5 @@
-import { AppMode } from '../enums/modes';
-import { UserRole } from '../enums/roles';
+import { AppMode } from '../enums/modes.js';
+import { UserRole } from '../enums/roles.js';
 
 export interface User {
   id: string;

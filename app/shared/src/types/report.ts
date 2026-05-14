@@ -1,4 +1,4 @@
-import { ReportType } from '../enums/statuses';
+import { ReportType } from '../enums/statuses.js';
 
 export interface ReportDraft {
   id: string;
