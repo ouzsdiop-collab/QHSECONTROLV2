@@ -1,11 +1,34 @@
-import { Building2, ShieldCheck } from 'lucide-react';
-import { AlertCard } from '../../components/feedback/AlertCard';
-import { ToastPlaceholder } from '../../components/feedback/ToastPlaceholder';
-import { KpiCard } from '../../components/kpi/KpiCard';
-import { KpiGrid } from '../../components/kpi/KpiGrid';
-import { IconBadge } from '../../components/ui/IconBadge';
+import { useEffect, useState } from 'react';
+import { DashboardActionPlan } from './DashboardActionPlan';
+import { DashboardAlerts } from './DashboardAlerts';
+import { DashboardCharts } from './DashboardCharts';
+import { DashboardExtendedIndicators } from './DashboardExtendedIndicators';
+import { DashboardFilters } from './DashboardFilters';
+import { DashboardHeader } from './DashboardHeader';
+import { DashboardKpis } from './DashboardKpis';
 import { DashboardQuickActions } from './DashboardQuickActions';
+import { ExecutiveSummary } from './ExecutiveSummary';
+import { KpiDetailDrawer } from './KpiDetailDrawer';
+import { PriorityPanel } from './PriorityPanel';
+import { dashboardService } from './dashboardService';
+import { DashboardData, DashboardFilterState, DashboardKpi } from './DashboardTypes';
 
 export function DashboardPage() {
-  return <section><h2>Dashboard de pilotage QHSE</h2><p className="muted">Vue actionnable prête pour score, tendance, gravité et recommandations.</p><div className="dashboard-meta"><IconBadge icon={ShieldCheck} label="Conformité ISO" /><IconBadge icon={Building2} label="Multi-sites" /></div><KpiGrid><KpiCard title="Score conformité" value="92/100" trend="+3 pts sur 30 jours" severity="Risque modéré" status="Sous contrôle" action="Clore 4 CAPA en retard" /><KpiCard title="Incidents ouverts" value="07" trend="-2 vs semaine précédente" severity="Vigilance" status="En cours" action="Prioriser site logistique" /><KpiCard title="Audits critiques" value="03" trend="Stable" severity="Élevé" status="Planifié" action="Valider preuves ISO" /></KpiGrid><DashboardQuickActions /><div className="grid section-gap"><AlertCard level="warning" title="Dérive terrain" message="Hausse des presqu'accidents sur la zone expédition." /><ToastPlaceholder /></div></section>;
+  const [data, setData] = useState<DashboardData | null>(null);
+  const [selectedKpi, setSelectedKpi] = useState<DashboardKpi | null>(null);
+  const [filters, setFilters] = useState<DashboardFilterState>({ period: '30 derniers jours', site: 'Tous les sites', service: 'Tous les services', readingMode: 'essential' });
+  useEffect(() => { dashboardService.getDashboardData().then(setData); }, []);
+  if (!data) return <section><p>Chargement cockpit…</p></section>;
+
+  return <section>
+    <DashboardHeader situation={data.score.situation} />
+    <DashboardFilters filters={filters} periods={data.periods} sites={data.sites} services={data.services} onChange={setFilters} />
+    <ExecutiveSummary score={data.score} readingMode={filters.readingMode} />
+    <PriorityPanel items={data.priorities} />
+    <DashboardQuickActions />
+    <DashboardKpis kpis={data.kpis} onSelect={setSelectedKpi} />
+    <div className="grid section-gap"><DashboardAlerts insights={data.insights} /><DashboardActionPlan decisions={data.decisions} /></div>
+    <div className="grid section-gap"><DashboardCharts trend={data.incidentTrend6m} workload={data.workload} /><DashboardExtendedIndicators indicators={data.extendedIndicators} recentActivity={data.recentActivity} /></div>
+    <KpiDetailDrawer kpi={selectedKpi} readingMode={filters.readingMode} onClose={() => setSelectedKpi(null)} />
+  </section>;
 }
