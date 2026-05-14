@@ -1,12 +1,10 @@
-# /app/frontend
+# Frontend
 
-Ce dossier accueillera l’application frontend QHSE Control V2.
+Application React + TypeScript + Vite avec shell clair/sombre, modes placeholders et préparation offline.
 
-## Rôle
-- Interface utilisateur React + TypeScript + Vite.
-- Gestion des modes Essentiel, Expert, Terrain et Admin.
-- Consommation des APIs backend via services dédiés.
+## Scripts
+- `npm run dev -w @qhse/frontend`
+- `npm run typecheck -w @qhse/frontend`
+- `npm run build -w @qhse/frontend`
 
-## Statut actuel
-- Dossier préparé pour Lot 0 (documentation/blueprint uniquement).
-- Aucune implémentation applicative créée dans ce lot.
+Aucun déploiement n'est configuré.

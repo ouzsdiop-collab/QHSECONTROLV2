@@ -57,3 +57,6 @@ Initialiser le socle technique exécutable minimal V2 (front/back/shared) sans d
 - Aucun module métier avancé.
 - Aucune dépendance non justifiée.
 - Aucune reprise directe du code V1.
+
+## Statut
+- 2026-05-14 : **Lot 1 bootstrap initialisé** avec workspace /app (frontend React+Vite, backend Express TS, shared contracts TS).
