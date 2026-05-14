@@ -37,3 +37,8 @@
 ### Prochaines slices
 - Slice 2: structurer “À traiter maintenant” avec priorisation plus explicite et interactions dédiées.
 - Slice 3: enrichir la zone KPI critiques avec seuils et interactions de détail harmonisées.
+
+### Ajustement visuel Slice 1 (itération premium)
+- Fusion des deux cartes hautes en une carte cockpit unique plus dense et hiérarchisée.
+- Passage à un corps en 3 colonnes desktop (Score / Facteurs pénalisants / Actions prioritaires) avec fallback mobile en pile.
+- Facteurs pénalisants rendus en chips compactes de statut, actions rendues plus sobres avec variantes primaire/secondaire/ghost.

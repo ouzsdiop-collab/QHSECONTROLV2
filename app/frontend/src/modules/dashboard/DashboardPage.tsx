@@ -27,18 +27,14 @@ export function DashboardPage() {
 
   return <section>
     <DashboardFilters filters={filters} periods={data.periods} sites={data.sites} services={data.services} onChange={setFilters} />
-    <div className="dashboard-top-grid section-gap">
-      <DashboardHero
-        situation={data.score.situation}
-        context={filters}
-        onAction={(actionId) => setHeroFeedback(`Action préparée: ${actionId.replace('_', ' ')}`)}
-      />
-      <ScoreSummaryCard
-        score={data.score}
-        readingMode={filters.readingMode}
-        onExplainScore={() => setHeroFeedback('Détail du score disponible dans une prochaine slice (drawer explicatif).')}
-      />
-    </div>
+    <DashboardHero
+      situation={data.score.situation}
+      trend={data.score.trend}
+      context={filters}
+      score={data.score}
+      onAction={(actionId) => setHeroFeedback(`Action préparée: ${actionId.replace('_', ' ')}`)}
+      onExplainScore={() => setHeroFeedback('Détail du score disponible dans une prochaine slice (drawer explicatif).')}
+    />
     {heroFeedback && <p className="muted section-gap">{heroFeedback}</p>}
     <PriorityPanel items={data.priorities} />
     <DashboardKpis kpis={data.kpis} onSelect={setSelectedKpi} />
