@@ -1,2 +1,7 @@
 import { useTheme } from '../../hooks/useTheme';
-export function ThemeToggle(){ const {theme,toggleTheme}=useTheme(); return <button onClick={toggleTheme}>Thème {theme==='light'?'clair':'sombre'}</button>; }
+import { Button } from './Button';
+
+export function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
+  return <Button onClick={toggleTheme}>{theme === 'light' ? 'Mode sombre' : 'Mode clair'}</Button>;
+}

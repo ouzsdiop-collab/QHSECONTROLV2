@@ -1,1 +1,5 @@
-import { ReactNode } from 'react'; export function Card({children}:{children:ReactNode}){return <article className='card'>{children}</article>;}
+import { ReactNode } from 'react';
+
+export function Card({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return <article className={`card ${className}`.trim()}>{children}</article>;
+}

@@ -1,1 +1,12 @@
-export function FieldQuickActions(){return <div className='grid'><button>Signaler incident</button><button>Créer action</button></div>;}
+import { Button } from '../../components/ui/Button';
+
+export function FieldQuickActions() {
+  return (
+    <div className="grid">
+      <Button>Incident</Button>
+      <Button>Danger</Button>
+      <Button>Presque accident</Button>
+      <Button>Action immédiate</Button>
+    </div>
+  );
+}
