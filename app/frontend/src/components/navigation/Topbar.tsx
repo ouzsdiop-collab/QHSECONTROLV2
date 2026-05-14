@@ -1,5 +1,6 @@
+import { Bell, Search, Users } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
-import { Badge } from '../ui/Badge';
+import { IconBadge } from '../ui/IconBadge';
 
 export function Topbar() {
   return (
@@ -8,8 +9,10 @@ export function Topbar() {
         <h1>Pilotage QHSE Premium</h1>
         <p className="muted">Modes Essentiel / Expert / Terrain / Admin</p>
       </div>
-      <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-        <Badge>Tenant Démo</Badge>
+      <div className="topbar-actions">
+        <IconBadge icon={Users} label="Tenant Démo" />
+        <button className="icon-btn" aria-label="Recherche"><Search size={16} /></button>
+        <button className="icon-btn" aria-label="Alertes"><Bell size={16} /></button>
         <ThemeToggle />
       </div>
     </header>
