@@ -25,3 +25,13 @@
 - Travailler par **petits lots reviewables**.
 - Proposer un **plan avant chaque grosse implémentation**.
 - Documenter les décisions structurantes dans `/docs`.
+
+
+## Pilotage et mode terrain
+- QHSE Control V2 doit servir au pilotage réel, pas seulement à la saisie.
+- Tout KPI doit être explicable et actionnable.
+- Le mode Terrain est mobile-first et offline-compatible.
+- Aucune déclaration terrain ne doit être perdue à cause du réseau.
+- Prévoir les statuts de synchronisation offline (`local_draft`, `pending_sync`, `syncing`, `synced`, `sync_failed`, `conflict_review`).
+- Garder le mode Terrain simple, rapide et orienté action.
+- Ne pas exposer la complexité Expert dans le mode Terrain.
