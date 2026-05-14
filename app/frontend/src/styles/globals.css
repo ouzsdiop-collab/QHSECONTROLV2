@@ -60,3 +60,7 @@ small, .muted { color: var(--color-text-secondary); }
 .alert-card--warning{border-left-color:var(--color-warning);background:color-mix(in oklab,var(--color-warning-soft),var(--color-surface) 82%);}
 .alert-card--info{border-left-color:var(--color-info);background:color-mix(in oklab,var(--color-info-soft),var(--color-surface) 84%);}
 .alert-card--success{border-left-color:var(--color-success);background:color-mix(in oklab,var(--color-success-soft),var(--color-surface) 82%);}
+
+.quick-actions-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-3); margin-top: var(--space-3); }
+.quick-actions-feedback { margin-top: var(--space-3); }
+.tab { background: transparent; cursor: pointer; }
