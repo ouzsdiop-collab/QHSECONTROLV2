@@ -2,12 +2,17 @@ import { DashboardData } from './DashboardTypes';
 
 export const dashboardMockData: DashboardData = {
   score: {
-    value: 78,
-    level: 'Vigilance renforcée',
-    trend: '-2 pts / 30 jours',
-    situation: 'vigilance',
-    explanation: 'Les retards d’actions et les preuves ISO manquantes pénalisent la maîtrise globale.',
-    penalties: ['11 actions en retard', '2 incidents critiques ouverts', '9 NC ouvertes', '6 preuves ISO manquantes'],
+    value: 40,
+    level: 'Action urgente',
+    trend: '↘ -8 pts vs période précédente',
+    situation: 'action_urgente',
+    explanationEssential: 'Votre situation demande une action rapide car plusieurs actions critiques sont en retard.',
+    explanationExpert: 'Le score est pénalisé par les actions échues, les NC ouvertes sans preuve et les incidents critiques non analysés.',
+    factors: [
+      { label: '19 actions en retard' },
+      { label: '5 incidents critiques' },
+      { label: '4 NC ouvertes' },
+    ],
   },
   periods: ['30 derniers jours', 'Trimestre en cours', '6 derniers mois'],
   sites: ['Tous les sites', 'Lille - Logistique', 'Nantes - Production', 'Lyon - HQ'],
