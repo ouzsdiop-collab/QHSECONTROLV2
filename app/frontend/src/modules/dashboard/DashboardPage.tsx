@@ -1,0 +1,1 @@
+import { KpiCard } from '../../components/kpi/KpiCard'; export function DashboardPage(){return <><h2>Pilotage QHSE réel</h2><div className='grid'><KpiCard title='Actions en retard' value='12' hint='Prioriser sites critiques.'/><KpiCard title='Incidents ouverts' value='7' hint='Accélérer analyses terrain.'/></div></>;}

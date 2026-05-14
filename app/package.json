@@ -1,0 +1,23 @@
+{
+  "name": "qhsecontrolv2-app",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @qhse/backend & npm run dev -w @qhse/frontend",
+    "dev:frontend": "npm run dev -w @qhse/frontend",
+    "dev:backend": "npm run dev -w @qhse/backend",
+    "dev:shared": "npm run dev -w @qhse/shared",
+    "build": "npm run build -w @qhse/shared && npm run build -w @qhse/backend && npm run build -w @qhse/frontend",
+    "typecheck": "npm run typecheck -w @qhse/shared && npm run typecheck -w @qhse/backend && npm run typecheck -w @qhse/frontend",
+    "lint": "npm run lint -w @qhse/backend && npm run lint -w @qhse/frontend",
+    "test": "echo \"No automated tests yet. See package-level README files.\""
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

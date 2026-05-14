@@ -1,12 +1,8 @@
-# /app/shared
+# Shared
 
-Ce dossier accueillera les contrats et types partagés entre frontend et backend.
+Package TypeScript contenant enums/types communs (modes, rôles, statuts, imports, offline sync, navigation).
 
-## Rôle
-- Centraliser types, enums et contrats API.
-- Aligner les statuts, rôles, modes et structures de données communes.
-- Réduire les divergences entre interfaces et services backend.
-
-## Statut actuel
-- Dossier préparé pour Lot 0 (documentation/blueprint uniquement).
-- Aucune implémentation de package partagée créée dans ce lot.
+## Scripts
+- `npm run dev -w @qhse/shared`
+- `npm run typecheck -w @qhse/shared`
+- `npm run build -w @qhse/shared`

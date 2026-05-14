@@ -1,0 +1,2 @@
+import express from 'express'; import { requestLogger } from './common/middlewares/requestLogger.js'; import { errorHandler } from './common/middlewares/errorHandler.js'; import { healthRouter } from './modules/health/health.routes.js'; import { statusRouter } from './modules/status/status.routes.js';
+export const app = express(); app.use(express.json()); app.use(requestLogger); app.use(healthRouter); app.use('/api',statusRouter); app.use(errorHandler);

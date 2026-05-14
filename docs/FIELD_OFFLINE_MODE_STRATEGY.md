@@ -68,3 +68,9 @@ Le mode Terrain doit fonctionner en réseau dégradé ou hors-ligne :
 - Zéro perte de donnée terrain en coupure réseau.
 - État de synchronisation visible et compréhensible par l’utilisateur.
 - Conflits traitables par workflow clair côté supervision.
+
+## Mise à jour technique (2026-05-14)
+- Préparation frontend mode Terrain mobile-first avec statut offline/synchronisation placeholder.
+- Package shared enrichi avec `OfflineSyncStatus` et `OfflineQueueItem`.
+- Backend avec base placeholder pour futur pipeline sync/import/reports sans connexion production.
+
