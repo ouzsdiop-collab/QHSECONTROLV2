@@ -1,6 +1,27 @@
 export type DashboardReadingMode = 'essential' | 'expert';
 export type DashboardSituation = 'action_urgente' | 'vigilance' | 'maitrise';
 
+export interface DashboardContext {
+  period: string;
+  site: string;
+  service: string;
+  readingMode: DashboardReadingMode;
+}
+
+export interface ScoreFactor {
+  label: string;
+}
+
+export interface ScoreSummary {
+  value: number;
+  level: string;
+  trend: string;
+  situation: DashboardSituation;
+  explanationEssential: string;
+  explanationExpert: string;
+  factors: ScoreFactor[];
+}
+
 export interface DashboardFilterState {
   period: string;
   site: string;
@@ -53,7 +74,7 @@ export interface DashboardDecision {
 }
 
 export interface DashboardData {
-  score: { value: number; level: string; trend: string; situation: DashboardSituation; explanation: string; penalties: string[] };
+  score: ScoreSummary;
   periods: string[];
   sites: string[];
   services: string[];
