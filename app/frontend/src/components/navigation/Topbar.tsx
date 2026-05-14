@@ -1,2 +1,17 @@
 import { ThemeToggle } from '../ui/ThemeToggle';
-export function Topbar(){return <header className='topbar'><h1>QHSE Control V2</h1><ThemeToggle/></header>;}
+import { Badge } from '../ui/Badge';
+
+export function Topbar() {
+  return (
+    <header className="topbar">
+      <div>
+        <h1>Pilotage QHSE Premium</h1>
+        <p className="muted">Modes Essentiel / Expert / Terrain / Admin</p>
+      </div>
+      <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+        <Badge>Tenant Démo</Badge>
+        <ThemeToggle />
+      </div>
+    </header>
+  );
+}
