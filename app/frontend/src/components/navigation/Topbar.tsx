@@ -7,7 +7,7 @@ export function Topbar() {
     <header className="topbar">
       <div>
         <h1>Pilotage QHSE Premium</h1>
-        <p className="muted">Modes Essentiel / Expert / Terrain / Admin</p>
+        <p className="muted">Modes Essentiel / Expert / Terrain + Paramètres entreprise</p>
       </div>
       <div className="topbar-actions">
         <IconBadge icon={Users} label="Tenant Démo" />

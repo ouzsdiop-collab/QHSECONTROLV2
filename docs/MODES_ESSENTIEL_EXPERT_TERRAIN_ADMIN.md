@@ -1,4 +1,4 @@
-# Modes produit — Essentiel, Expert, Terrain, Admin
+# Modes produit — Essentiel, Expert, Terrain + Administration entreprise
 
 ## Mode Essentiel
 - Ce n’est ni une version gratuite ni une version dégradée.
@@ -24,7 +24,10 @@
 - N’expose pas toute la complexité du mode Expert.
 - Statuts de synchronisation visibles : `local_draft`, `pending_sync`, `syncing`, `synced`, `sync_failed`, `conflict_review`.
 
-## Mode Admin
-- Gestion SaaS multi-entreprises.
-- Gestion utilisateurs, rôles, abonnements, modules activés.
-- Pilotage packs réglementaires, logs, imports, exports, erreurs et support.
+## Administration entreprise (côté client)
+- Nommage UI : **Paramètres entreprise**.
+- Gestion du périmètre d’un compte client : utilisateurs, rôles internes, sites/services, modules du compte, objectifs ISO, notifications, préférences PDF, imports/exports.
+
+## Console Plateforme (hors navigation client standard)
+- Réservée à l’équipe QHSE Control.
+- Back-office SaaS global : tenants, abonnements, packs réglementaires, supervision, logs et support.

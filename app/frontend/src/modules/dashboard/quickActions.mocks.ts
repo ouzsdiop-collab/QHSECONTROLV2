@@ -1,0 +1,62 @@
+import { UserRole } from '@qhse/shared';
+import {
+  Activity,
+  AlertTriangle,
+  ArrowUpCircle,
+  Building2,
+  ClipboardList,
+  Factory,
+  FileSearch,
+  FileText,
+  FlaskConical,
+  HardHat,
+  QrCode,
+  Radar,
+  ScanSearch,
+  ShieldAlert,
+  ShieldCheck,
+  Siren,
+  UserCog,
+  Users,
+  Wrench,
+} from 'lucide-react';
+import { DashboardQuickAction } from './quickActions.types';
+
+export const dashboardQuickActionsMock: DashboardQuickAction[] = [
+  { id: 'import-document', label: 'Importer un document', hint: 'Préparer un import contrôlé', mode: 'global', icon: FileText, feedback: 'Navigation préparée vers Imports (placeholder).' },
+  { id: 'declare-incident', label: 'Déclarer un incident', hint: 'Ouvrir un formulaire simplifié', mode: 'global', icon: Siren, feedback: 'Formulaire incident à venir (placeholder).' },
+  { id: 'add-action', label: 'Ajouter une action', hint: 'Créer une action corrective', mode: 'global', icon: ClipboardList, feedback: 'Création d\'action prête (placeholder).' },
+  { id: 'add-risk', label: 'Ajouter un risque', hint: 'Alimenter la cartographie', mode: 'global', icon: AlertTriangle, feedback: 'Module risques à connecter (placeholder).' },
+  { id: 'launch-duerp-review', label: 'Lancer une revue DUERP', hint: 'Initier une revue périodique', mode: 'global', icon: ShieldCheck, feedback: 'Revue DUERP initialisée (simulation).' },
+  { id: 'generate-report', label: 'Générer un rapport', hint: 'Préparer une sortie PDF', mode: 'global', icon: FileSearch, feedback: 'Génération du rapport simulée.' },
+  { id: 'schedule-audit', label: 'Planifier un audit', hint: 'Créer un créneau de contrôle', mode: 'global', icon: Activity, feedback: 'Planification audit à venir (placeholder).' },
+  { id: 'view-priorities', label: 'Voir les priorités', hint: 'Trier les urgences opérationnelles', mode: 'global', icon: ArrowUpCircle, feedback: 'Priorités chargées (lecture simulée).' },
+  { id: 'missing-iso-evidence', label: 'Consulter les preuves ISO manquantes', hint: 'Lister les pièces à fournir', mode: 'global', icon: ScanSearch, feedback: 'Liste des preuves manquantes simulée.' },
+  { id: 'open-field-mode', label: 'Ouvrir le mode Terrain', hint: 'Basculer en parcours opérateur', mode: 'global', icon: HardHat, feedback: 'Navigation préparée vers mode Terrain.' },
+
+  { id: 'essential-priorities', label: 'Voir mes priorités', hint: 'Focus du jour', mode: 'essential', icon: ArrowUpCircle, feedback: 'Priorités essentielles simulées.' },
+  { id: 'essential-overdue-actions', label: 'Corriger les actions en retard', hint: 'Traiter les retards critiques', mode: 'essential', icon: Wrench, feedback: 'Liste des actions en retard à traiter (placeholder).' },
+  { id: 'essential-import-duerp', label: 'Importer mon DUERP', hint: 'Assistant d\'import simplifié', mode: 'essential', icon: FileText, feedback: 'Assistant DUERP prêt (placeholder).' },
+  { id: 'essential-simple-report', label: 'Générer un bilan simple', hint: 'Synthèse non technique', mode: 'essential', icon: FileSearch, feedback: 'Bilan simple simulé.' },
+  { id: 'essential-score', label: 'Comprendre mon score', hint: 'Voir les leviers concrets', mode: 'essential', icon: ShieldCheck, feedback: 'Explication du score affichée (placeholder).' },
+
+  { id: 'expert-risk-matrix', label: 'Ouvrir matrice des risques', hint: 'Analyse multi-critères', mode: 'expert', icon: Radar, feedback: 'Matrice des risques à brancher (placeholder).' },
+  { id: 'expert-iso-gap', label: 'Voir écarts ISO', hint: 'Lecture par référentiel', mode: 'expert', icon: ShieldAlert, feedback: 'Écarts ISO simulés.' },
+  { id: 'expert-missing-evidence', label: 'Contrôler preuves manquantes', hint: 'Contrôle de complétude', mode: 'expert', icon: ScanSearch, feedback: 'Contrôle des preuves lancé (simulation).' },
+  { id: 'expert-incidents-analysis', label: 'Analyser incidents', hint: 'Tendance et causes', mode: 'expert', icon: Activity, feedback: 'Analyse incidents à venir (placeholder).' },
+  { id: 'expert-export-report', label: 'Exporter rapport cabinet', hint: 'Export pour conseil externe', mode: 'expert', icon: FileSearch, feedback: 'Export cabinet simulé.' },
+
+  { id: 'field-report-danger', label: 'Signaler un danger', hint: 'Alerte immédiate terrain', mode: 'field', icon: AlertTriangle, feedback: 'Signalement danger préparé (placeholder).' },
+  { id: 'field-declare-incident', label: 'Déclarer incident', hint: 'Fiche rapide', mode: 'field', icon: Siren, feedback: 'Déclaration incident terrain simulée.' },
+  { id: 'field-near-miss', label: 'Presque accident', hint: 'Capture d\'événement', mode: 'field', icon: FlaskConical, feedback: 'Presque accident enregistré (simulation).' },
+  { id: 'field-scan-qr', label: 'Scanner QR code', hint: 'Ouvrir une fiche localisée', mode: 'field', icon: QrCode, feedback: 'Scanner QR prêt (placeholder).' },
+  { id: 'field-sds', label: 'Consulter FDS', hint: 'Accès fiche de sécurité', mode: 'field', icon: FileText, feedback: 'Consultation FDS simulée.' },
+  { id: 'field-sync', label: 'Synchroniser', hint: 'Envoyer les brouillons offline', mode: 'field', icon: ArrowUpCircle, feedback: 'Synchronisation simulée.' },
+
+  { id: 'company-users', label: 'Utilisateurs', hint: 'Gérer les comptes de l\'entreprise', mode: 'company_admin', icon: Users, feedback: 'Gestion utilisateurs entreprise (placeholder).', visibleForRoles: [UserRole.COMPANY_OWNER, UserRole.COMPANY_ADMIN] },
+  { id: 'company-sites-services', label: 'Sites & services', hint: 'Structurer le périmètre opérationnel', mode: 'company_admin', icon: Building2, feedback: 'Gestion sites & services entreprise (placeholder).', visibleForRoles: [UserRole.COMPANY_OWNER, UserRole.COMPANY_ADMIN] },
+  { id: 'company-iso-goals', label: 'Objectifs ISO', hint: 'Piloter les objectifs du compte', mode: 'company_admin', icon: ShieldCheck, feedback: 'Objectifs ISO entreprise (placeholder).', visibleForRoles: [UserRole.COMPANY_OWNER, UserRole.COMPANY_ADMIN] },
+  { id: 'company-modules', label: 'Modules', hint: 'Activer les modules du compte', mode: 'company_admin', icon: UserCog, feedback: 'Modules entreprise (placeholder).', visibleForRoles: [UserRole.COMPANY_OWNER, UserRole.COMPANY_ADMIN] },
+  { id: 'company-import-errors', label: 'Voir imports en erreur', hint: 'Corriger les rejets', mode: 'company_admin', icon: Factory, feedback: 'Erreurs d\'import entreprise (placeholder).', visibleForRoles: [UserRole.COMPANY_OWNER, UserRole.COMPANY_ADMIN] },
+  { id: 'company-logs', label: 'Voir logs', hint: 'Audit technique du compte', mode: 'company_admin', icon: ClipboardList, feedback: 'Logs entreprise (placeholder).', visibleForRoles: [UserRole.COMPANY_OWNER, UserRole.COMPANY_ADMIN] },
+];
