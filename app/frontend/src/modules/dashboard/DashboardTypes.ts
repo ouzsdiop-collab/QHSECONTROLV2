@@ -57,6 +57,7 @@ export interface DashboardPriorityItem {
   ageOrDue: string;
   sourceModule: string;
   actionLabel?: string;
+  recommendedAction?: string;
 }
 
 export interface DashboardInsight {

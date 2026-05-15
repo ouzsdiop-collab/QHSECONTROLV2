@@ -77,3 +77,13 @@
   - Données toujours mockées, non persistées.
 - **Prochaine slice recommandée**:
   - Connecter `Ouvrir` à un routeur/intercepteur module et ajouter un état de priorisation partagé avec le hero cockpit (filtre + focus croisé).
+
+### Slice 2 - Itération pétrole/gaz (raffinement visuel)
+- Remplacement des 5 priorités mockées par des cas crédibles énergie/pétrole/gaz (fuite gaz HP compresseur, ATEX, condensats, FDS méthanol, consignation énergie dangereuse).
+- Densification des lignes priorité avec hiérarchie renforcée:
+  - badge type + icône métier,
+  - titre opérationnel court,
+  - badge gravité,
+  - action recommandée concise,
+  - méta complète `site · service · délai · module`.
+- Colonne action droite clarifiée sur desktop avec bouton `Ouvrir` en pill, et fallback mobile en cartes compactes.
