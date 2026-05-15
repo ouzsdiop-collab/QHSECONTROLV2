@@ -105,3 +105,54 @@ small, .muted { color: var(--color-text-secondary); }
 
 .dashboard-link-btn { border:none; background:transparent; color:var(--color-accent); padding:0; font-weight:600; cursor:pointer; }
 
+
+.dashboard-card { border:1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.dashboard-status-badge { white-space: nowrap; }
+.dashboard-cockpit-card { padding: var(--space-4); background: color-mix(in oklab, var(--color-surface), var(--color-accent-soft) 8%); }
+.dashboard-cockpit-card__header { display:flex; justify-content:space-between; gap: var(--space-3); margin-bottom: var(--space-3); }
+.dashboard-cockpit-card__eyebrow { margin:0 0 var(--space-1); }
+.dashboard-cockpit-card__title { margin:0; }
+.dashboard-cockpit-card__description { margin: var(--space-1) 0 0; max-width: 70ch; }
+.dashboard-cockpit-main { padding: var(--space-4); }
+.dashboard-cockpit-side__actions { padding: var(--space-3); border:1px solid var(--color-border); border-radius: var(--radius-md); background: color-mix(in oklab, var(--color-surface), var(--color-bg-elevated) 24%); }
+
+.dashboard-metric { position:relative; padding: var(--space-3); min-height: 128px; }
+.dashboard-metric__top,.dashboard-metric__footer { display:flex; align-items:center; justify-content:space-between; gap: var(--space-2); }
+.dashboard-metric__label { margin:0; font-size:0.82rem; color: var(--color-text-secondary); }
+.dashboard-metric__value { margin: var(--space-2) 0; font-size: 1.5rem; font-weight: 760; letter-spacing:-0.01em; }
+.dashboard-metric__icon { color: var(--color-text-muted); display:inline-flex; }
+.dashboard-metric__hitbox { position:absolute; inset:0; border:none; background:transparent; cursor:pointer; }
+.dashboard-metric--interactive { transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast); }
+.dashboard-metric--interactive:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--color-border-strong); }
+
+.dashboard-shortcut { width:100%; border:1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.6rem 0.65rem; display:flex; align-items:flex-start; gap: var(--space-2); text-align:left; cursor:pointer; }
+.dashboard-shortcut__content { display:grid; gap:2px; }
+.dashboard-shortcut__label { font-weight:650; color: var(--color-text); }
+.dashboard-shortcut__description { color: var(--color-text-muted); font-size:0.74rem; }
+.dashboard-shortcut--primary { background: color-mix(in oklab, var(--color-accent-soft), var(--color-surface) 65%); }
+.dashboard-shortcut--secondary { background: var(--color-surface); }
+.dashboard-shortcut--subtle { background: color-mix(in oklab, var(--color-surface), var(--color-bg-elevated) 40%); }
+.dashboard-shortcut:hover { border-color: var(--color-border-strong); }
+
+.dashboard-priority-row { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap: var(--space-2); padding: var(--space-2) 0; border-bottom:1px solid var(--color-border); }
+.dashboard-priority-row__main { display:flex; align-items:center; gap: var(--space-2); min-width:0; }
+.dashboard-priority-row__title { margin:0; font-weight:620; }
+.dashboard-priority-row__meta { grid-column: 1 / -1; margin:0; font-size:0.8rem; }
+
+.dashboard-insight { padding: var(--space-3); display:grid; gap: var(--space-2); }
+.dashboard-insight__title,.dashboard-insight__description,.dashboard-insight__meta { margin:0; }
+.dashboard-insight__title { font-weight: 670; }
+.dashboard-insight__description { font-size:0.88rem; }
+.dashboard-insight__meta { font-size:0.76rem; }
+
+.dashboard-section-header { display:flex; justify-content:space-between; align-items:flex-start; gap: var(--space-3); margin-bottom: var(--space-3); }
+.dashboard-section-header__eyebrow,.dashboard-section-header__title,.dashboard-section-header__description { margin:0; }
+.dashboard-section-header__title { margin-top:2px; }
+
+@media (max-width: 980px) {
+  .dashboard-cockpit-card__header,
+  .dashboard-section-header { flex-direction:column; }
+  .dashboard-cockpit-side__kpis,
+  .dashboard-cockpit-side__buttons { grid-template-columns: 1fr; }
+  .dashboard-priority-row { grid-template-columns: 1fr; }
+}
