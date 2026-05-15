@@ -44,3 +44,14 @@
 - Facteurs pénalisants rendus en chips compactes de statut, actions rendues plus sobres avec variantes primaire/secondaire/ghost.
 
 - 2026-05-14: Slice cockpit V2 hero renforcée (bloc cockpit unique, score dominant, mini-KPI 2x2, accès rapides compacts, filtres visuellement secondaires).
+
+## Lot 3C - Dashboard UI signature components
+- Création d'une mini-bibliothèque UI dashboard réutilisable dans `app/frontend/src/modules/dashboard/components`:
+  - `CockpitCard`, `MetricCard`, `PriorityRow`, `ActionShortcut`, `InsightCard`, `DashboardSectionHeader`, `StatusBadge`.
+- Introduction de classes globales dashboard génériques (cards, metrics, priority rows, shortcuts, insight, section headers) sans couleurs hardcodées hors tokens.
+- Application minimale au hero cockpit:
+  - Hero encapsulé par `CockpitCard`.
+  - 4 mini KPI migrés sur `MetricCard`.
+  - Accès rapides migrés sur `ActionShortcut`.
+- Aucune nouvelle fonctionnalité métier: refonte purement UI + cohérence visuelle.
+- Documentation dédiée ajoutée: `docs/DASHBOARD_UI_COMPONENTS.md`.
