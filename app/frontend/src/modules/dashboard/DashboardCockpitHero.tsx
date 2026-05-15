@@ -20,7 +20,7 @@ const situationCopy: Record<DashboardSituation, { label: string; tone: 'critical
     tone: 'critical',
     summary: 'Priorité : réduire les actions en retard et traiter les incidents critiques sous 48h.',
   },
-  vigilance: {
+  vigilance_renforcee: {
     label: 'Vigilance renforcée',
     tone: 'warning',
     summary: 'Priorité : stabiliser les dérives terrain et renforcer le suivi hebdomadaire.',
@@ -38,7 +38,7 @@ const metricIconMap = [ShieldAlert, ClipboardCheck, FileWarning, FileX2] as cons
 export function DashboardCockpitHero({ situation, trend, context, score, metrics, onAction }: DashboardCockpitHeroProps) {
   const progress = Math.min(100, Math.max(0, score.value));
   const readingLabel = context.readingMode === 'essential' ? 'Essentiel' : 'Expert';
-  const quickContext = `${context.period} · ${context.site} · ${context.service} · Lecture ${readingLabel}`;
+  const quickContext = `${context.period} · ${context.activeSite} · ${context.services.join(", ")} · Lecture ${readingLabel}`;
 
   return (
     <section className="dashboard-cockpit-hero section-gap">
