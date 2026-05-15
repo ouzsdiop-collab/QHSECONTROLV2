@@ -62,3 +62,28 @@
 - Zone score densifiée: score dominant, barre premium, résumé direction court, action secondaire "Comprendre le score".
 - Zone droite renforcée: KPI 2x2 avec icônes lucide, accents visuels subtils par statut, raccourcis compacts en bande, affordance discrète "Voir priorités".
 - Responsive conservé: desktop en deux zones, mobile en pile (score puis KPI puis actions).
+
+## Slice 2 - À traiter maintenant compact
+- **Composants ajoutés/modifiés**:
+  - `DashboardNowPanel` refactorisé autour de `CockpitCard` + `PriorityRow` pour une lecture immédiate des 5 priorités max.
+  - `DashboardPriorityItem` enrichi minimalement (`DashboardPriorityType`, `actionLabel`) pour structurer les lignes sans sur-modélisation.
+  - Styles dashboard étendus (`dashboard-now-panel__*`) pour une densité premium, hover subtil et version mobile en cartes courtes.
+- **Choix UX**:
+  - En-tête cockpit secondaire avec eyebrow + description ultra-courte orientée revue QHSE.
+  - Lignes compactes : type (badge), titre court, contexte (site/service), méta (délai/ancienneté + module), CTA `Ouvrir` à droite.
+  - Feedback local après clic pour confirmer l'intention d'ouverture sans navigation réelle.
+- **Limites**:
+  - Navigation module toujours placeholder (aucune redirection fonctionnelle).
+  - Données toujours mockées, non persistées.
+- **Prochaine slice recommandée**:
+  - Connecter `Ouvrir` à un routeur/intercepteur module et ajouter un état de priorisation partagé avec le hero cockpit (filtre + focus croisé).
+
+### Slice 2 - Itération pétrole/gaz (raffinement visuel)
+- Remplacement des 5 priorités mockées par des cas crédibles énergie/pétrole/gaz (fuite gaz HP compresseur, ATEX, condensats, FDS méthanol, consignation énergie dangereuse).
+- Densification des lignes priorité avec hiérarchie renforcée:
+  - badge type + icône métier,
+  - titre opérationnel court,
+  - badge gravité,
+  - action recommandée concise,
+  - méta complète `site · service · délai · module`.
+- Colonne action droite clarifiée sur desktop avec bouton `Ouvrir` en pill, et fallback mobile en cartes compactes.

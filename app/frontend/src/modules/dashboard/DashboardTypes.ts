@@ -45,15 +45,19 @@ export interface DashboardKpi {
   impactedItems: string[];
 }
 
+export type DashboardPriorityType = 'Incident' | 'Action' | 'NC' | 'FDS' | 'Audit';
+
 export interface DashboardPriorityItem {
   id: string;
-  type: string;
+  type: DashboardPriorityType;
   title: string;
   site: string;
   service: string;
   severity: 'warning' | 'danger' | 'info';
   ageOrDue: string;
   sourceModule: string;
+  actionLabel?: string;
+  recommendedAction?: string;
 }
 
 export interface DashboardInsight {

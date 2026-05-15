@@ -33,12 +33,13 @@ export const dashboardMockData: DashboardData = {
     { id: 'iso_missing', label: 'Preuves ISO manquantes', value: 6, status: 'À compléter', tone: 'info' },
   ],
   priorities: [
-    { id: 'p1', type: 'Incident critique', title: 'Collision engin/piéton évitée de justesse', site: 'Lille - Logistique', service: 'Exploitation', severity: 'danger', ageOrDue: 'Il y a 4h', sourceModule: 'Incidents' },
-    { id: 'p2', type: 'Action en retard', title: 'Arbitrer et replanifier CAPA-221', site: 'Nantes - Production', service: 'QHSE central', severity: 'warning', ageOrDue: 'Retard de 17 jours', sourceModule: 'Plan d’actions' },
-    { id: 'p3', type: 'NC ouverte', title: 'NC-87 sans preuve associée', site: 'Lyon - HQ', service: 'QHSE central', severity: 'warning', ageOrDue: 'Ouverte depuis 28 jours', sourceModule: 'Non-conformités' },
-    { id: 'p4', type: 'FDS', title: 'Réviser solvants atelier A3', site: 'Nantes - Production', service: 'Maintenance', severity: 'warning', ageOrDue: 'Échéance dans 3 jours', sourceModule: 'Documents' },
-    { id: 'p5', type: 'Audit', title: 'Planifier audit ISO 45001 ciblé', site: 'Lille - Logistique', service: 'QHSE central', severity: 'info', ageOrDue: 'Avant le 28 mai', sourceModule: 'Audits' },
+    { id: 'p1', type: 'Incident', title: 'Fuite gaz détectée sur bride HP compresseur C-204', site: 'Terminal gazier de Mbao', service: 'Exploitation gaz', severity: 'danger', ageOrDue: 'Il y a 2h', sourceModule: 'Incidents', recommendedAction: 'Sécuriser zone + analyse immédiate', actionLabel: 'Ouvrir' },
+    { id: 'p2', type: 'Action', title: 'Remplacer joint d’étanchéité sur ligne condensats LC-17', site: 'Unité traitement gaz', service: 'Maintenance mécanique', severity: 'warning', ageOrDue: 'Retard de 12 jours', sourceModule: 'Plan d’actions', recommendedAction: 'Arbitrer intervention sous 24h', actionLabel: 'Ouvrir' },
+    { id: 'p3', type: 'NC', title: 'Permis de travail incomplet avant intervention en zone ATEX', site: 'Dépôt hydrocarbures', service: 'HSE / Maintenance', severity: 'danger', ageOrDue: 'Ouverte depuis 18 jours', sourceModule: 'Non-conformités', recommendedAction: 'Bloquer intervention jusqu’à validation', actionLabel: 'Ouvrir' },
+    { id: 'p4', type: 'FDS', title: 'FDS méthanol injection hydrate à réviser', site: 'Station compression gaz', service: 'Procédés', severity: 'warning', ageOrDue: 'Échéance dans 3 jours', sourceModule: 'Documents / FDS', recommendedAction: 'Mettre à jour FDS + consignes terrain', actionLabel: 'Ouvrir' },
+    { id: 'p5', type: 'Audit', title: 'Planifier audit ciblé consignation / énergie dangereuse', site: 'Raffinerie / utilités vapeur', service: 'Exploitation', severity: 'warning', ageOrDue: 'Avant le 28 mai', sourceModule: 'Audits', recommendedAction: 'Planifier audit terrain', actionLabel: 'Ouvrir' },
   ],
+
   insights: [
     { id: 'i1', kind: 'derive', explanation: 'NC ouvertes concentrées sur Lille (+40% en 6 semaines).', confidence: 'Élevée (88%)', source: 'Croisement NC/site', recommendedAction: 'Initier revue locale avec responsables de service.' },
     { id: 'i2', kind: 'tendance', explanation: 'File d’actions qui vieillit : hausse des actions > 30 jours.', confidence: 'Moyenne (74%)', source: 'Historique plan d’actions', recommendedAction: 'Arbitrer les actions critiques et fermer les doublons.' },
@@ -64,5 +65,5 @@ export const dashboardMockData: DashboardData = {
     { label: 'Permis actifs', value: '31', status: 'Sous contrôle' },
     { label: 'Conformité multi-sites', value: '79%', status: 'Progression attendue' },
   ],
-  recentActivity: ['Incident #INC-502 déclaré il y a 2h', 'Action CAPA-221 réassignée', 'Audit interne maintenance clôturé', 'Synchronisation terrain effectuée il y a 18 min'],
+  recentActivity: ['Incident #INC-502 déclaré il y a 2h', 'Action CAPA-21 réassignée', 'Audit interne maintenance clôturé', 'Synchronisation terrain effectuée il y a 18 min'],
 };
