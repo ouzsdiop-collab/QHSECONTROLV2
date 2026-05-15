@@ -9,7 +9,6 @@ import { DashboardKpis } from './DashboardKpis';
 import { DashboardQuickActions } from './DashboardQuickActions';
 import { KpiDetailDrawer } from './KpiDetailDrawer';
 import { PriorityPanel } from './PriorityPanel';
-import { ScoreSummaryCard } from './ScoreSummaryCard';
 import { dashboardService } from './dashboardService';
 import { DashboardData, DashboardFilterState, DashboardKpi } from './DashboardTypes';
 
@@ -32,8 +31,8 @@ export function DashboardPage() {
       trend={data.score.trend}
       context={filters}
       score={data.score}
-      onAction={(actionId) => setHeroFeedback(`Action préparée: ${actionId.replace('_', ' ')}`)}
-      onExplainScore={() => setHeroFeedback('Détail du score disponible dans une prochaine slice (drawer explicatif).')}
+      metrics={data.heroMetrics}
+      onAction={(actionId) => setHeroFeedback(`Navigation cockpit préparée: ${actionId.replace('_', ' ')}`)}
     />
     {heroFeedback && <p className="muted section-gap">{heroFeedback}</p>}
     <PriorityPanel items={data.priorities} />

@@ -73,6 +73,14 @@ export interface DashboardDecision {
   owner: string;
 }
 
+export interface DashboardHeroMetric {
+  id: string;
+  label: string;
+  value: number;
+  status: string;
+  tone: 'info' | 'success' | 'warning' | 'danger';
+}
+
 export interface DashboardData {
   score: ScoreSummary;
   periods: string[];
@@ -80,6 +88,7 @@ export interface DashboardData {
   services: string[];
   kpis: DashboardKpi[];
   priorities: DashboardPriorityItem[];
+  heroMetrics: DashboardHeroMetric[];
   insights: DashboardInsight[];
   decisions: DashboardDecision[];
   incidentTrend6m: number[];

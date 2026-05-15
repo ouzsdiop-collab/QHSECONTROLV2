@@ -25,6 +25,13 @@ export const dashboardMockData: DashboardData = {
     { id: 'fds', title: 'FDS à réviser', value: 14, description: 'Fiches de données sécurité arrivant à échéance', trend: '+4 ce mois', trendDirection: 'up', status: 'Planifier', severity: 'warning', recommendedAction: 'Lancer campagne de mise à jour FDS', whyImportant: 'Conformité réglementaire et sécurité chimique.', source: 'Référentiel documentaire mock', impactedItems: ['8 en maintenance', '6 en exploitation'] },
     { id: 'audit', title: 'Audits à planifier', value: 4, description: 'Audits internes ISO non planifiés', trend: 'Stable', trendDirection: 'flat', status: 'À cadrer', severity: 'info', recommendedAction: 'Planifier ISO 45001 ciblé site Lille', whyImportant: 'Conditionne l’audit readiness global.', source: 'Planification audit mock', impactedItems: ['ISO 45001', 'ISO 14001'] },
   ],
+
+  heroMetrics: [
+    { id: 'inc_critical', label: 'Incidents critiques', value: 2, status: 'Urgent', tone: 'danger' },
+    { id: 'actions_late', label: 'Actions en retard', value: 11, status: 'Sous tension', tone: 'warning' },
+    { id: 'nc_open', label: 'NC ouvertes', value: 9, status: 'Vigilance', tone: 'warning' },
+    { id: 'iso_missing', label: 'Preuves ISO manquantes', value: 6, status: 'À compléter', tone: 'info' },
+  ],
   priorities: [
     { id: 'p1', type: 'Incident critique', title: 'Collision engin/piéton évitée de justesse', site: 'Lille - Logistique', service: 'Exploitation', severity: 'danger', ageOrDue: 'Il y a 4h', sourceModule: 'Incidents' },
     { id: 'p2', type: 'Action en retard', title: 'Arbitrer et replanifier CAPA-221', site: 'Nantes - Production', service: 'QHSE central', severity: 'warning', ageOrDue: 'Retard de 17 jours', sourceModule: 'Plan d’actions' },

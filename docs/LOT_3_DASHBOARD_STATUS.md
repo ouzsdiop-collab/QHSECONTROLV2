@@ -42,3 +42,5 @@
 - Fusion des deux cartes hautes en une carte cockpit unique plus dense et hiérarchisée.
 - Passage à un corps en 3 colonnes desktop (Score / Facteurs pénalisants / Actions prioritaires) avec fallback mobile en pile.
 - Facteurs pénalisants rendus en chips compactes de statut, actions rendues plus sobres avec variantes primaire/secondaire/ghost.
+
+- 2026-05-14: Slice cockpit V2 hero renforcée (bloc cockpit unique, score dominant, mini-KPI 2x2, accès rapides compacts, filtres visuellement secondaires).
