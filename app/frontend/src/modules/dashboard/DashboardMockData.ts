@@ -33,11 +33,11 @@ export const dashboardMockData: DashboardData = {
     { id: 'iso_missing', label: 'Preuves ISO manquantes', value: 6, status: 'À compléter', tone: 'info' },
   ],
   priorities: [
-    { id: 'p1', type: 'Incident critique', title: 'Collision engin/piéton évitée de justesse', site: 'Lille - Logistique', service: 'Exploitation', severity: 'danger', ageOrDue: 'Il y a 4h', sourceModule: 'Incidents' },
-    { id: 'p2', type: 'Action en retard', title: 'Arbitrer et replanifier CAPA-221', site: 'Nantes - Production', service: 'QHSE central', severity: 'warning', ageOrDue: 'Retard de 17 jours', sourceModule: 'Plan d’actions' },
-    { id: 'p3', type: 'NC ouverte', title: 'NC-87 sans preuve associée', site: 'Lyon - HQ', service: 'QHSE central', severity: 'warning', ageOrDue: 'Ouverte depuis 28 jours', sourceModule: 'Non-conformités' },
-    { id: 'p4', type: 'FDS', title: 'Réviser solvants atelier A3', site: 'Nantes - Production', service: 'Maintenance', severity: 'warning', ageOrDue: 'Échéance dans 3 jours', sourceModule: 'Documents' },
-    { id: 'p5', type: 'Audit', title: 'Planifier audit ISO 45001 ciblé', site: 'Lille - Logistique', service: 'QHSE central', severity: 'info', ageOrDue: 'Avant le 28 mai', sourceModule: 'Audits' },
+    { id: 'p1', type: 'Incident', title: 'Collision engin/piéton évitée de justesse', site: 'Lille - Logistique', service: 'Exploitation', severity: 'danger', ageOrDue: 'Il y a 4h', sourceModule: 'Incidents', actionLabel: 'Ouvrir' },
+    { id: 'p2', type: 'Action', title: 'Arbitrer et replanifier CAPA-21', site: 'Nantes - Production', service: 'QHSE central', severity: 'warning', ageOrDue: 'Retard de 17 jours', sourceModule: 'Plan d’actions', actionLabel: 'Ouvrir' },
+    { id: 'p3', type: 'NC', title: 'NC-87 sans preuve associée', site: 'Lyon - HQ', service: 'QHSE central', severity: 'warning', ageOrDue: 'Ouverte depuis 28 jours', sourceModule: 'Non-conformités', actionLabel: 'Ouvrir' },
+    { id: 'p4', type: 'FDS', title: 'Réviser solvants atelier A3', site: 'Nantes - Production', service: 'Maintenance', severity: 'warning', ageOrDue: 'Échéance dans 3 jours', sourceModule: 'Documents', actionLabel: 'Ouvrir' },
+    { id: 'p5', type: 'Audit', title: 'Planifier audit ISO 45001 ciblé', site: 'Lille - Logistique', service: 'Exploitation', severity: 'info', ageOrDue: 'Avant le 28 mai', sourceModule: 'Audits', actionLabel: 'Ouvrir' },
   ],
   insights: [
     { id: 'i1', kind: 'derive', explanation: 'NC ouvertes concentrées sur Lille (+40% en 6 semaines).', confidence: 'Élevée (88%)', source: 'Croisement NC/site', recommendedAction: 'Initier revue locale avec responsables de service.' },
@@ -64,5 +64,5 @@ export const dashboardMockData: DashboardData = {
     { label: 'Permis actifs', value: '31', status: 'Sous contrôle' },
     { label: 'Conformité multi-sites', value: '79%', status: 'Progression attendue' },
   ],
-  recentActivity: ['Incident #INC-502 déclaré il y a 2h', 'Action CAPA-221 réassignée', 'Audit interne maintenance clôturé', 'Synchronisation terrain effectuée il y a 18 min'],
+  recentActivity: ['Incident #INC-502 déclaré il y a 2h', 'Action CAPA-21 réassignée', 'Audit interne maintenance clôturé', 'Synchronisation terrain effectuée il y a 18 min'],
 };

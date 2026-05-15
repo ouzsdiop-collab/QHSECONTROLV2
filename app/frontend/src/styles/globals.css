@@ -139,6 +139,13 @@ small, .muted { color: var(--color-text-secondary); }
 .dashboard-priority-row__title { margin:0; font-weight:620; }
 .dashboard-priority-row__meta { grid-column: 1 / -1; margin:0; font-size:0.8rem; }
 
+
+.dashboard-now-panel__list { display:grid; }
+.dashboard-now-panel__item { border-bottom:1px solid var(--color-border); transition: background-color var(--transition-fast), border-color var(--transition-fast); }
+.dashboard-now-panel__item:hover { background: color-mix(in oklab, var(--color-bg-elevated), var(--color-surface) 55%); border-color: var(--color-border-strong); }
+.dashboard-now-panel__item:last-child { border-bottom:none; }
+.dashboard-now-panel__item .dashboard-priority-row { border-bottom:none; padding: 0.7rem 0.35rem; }
+.dashboard-now-panel__feedback { margin: var(--space-2) 0 0; font-size:0.82rem; }
 .dashboard-insight { padding: var(--space-3); display:grid; gap: var(--space-2); }
 .dashboard-insight__title,.dashboard-insight__description,.dashboard-insight__meta { margin:0; }
 .dashboard-insight__title { font-weight: 670; }
@@ -155,6 +162,8 @@ small, .muted { color: var(--color-text-secondary); }
   .dashboard-cockpit-side__kpis,
   .dashboard-cockpit-side__buttons { grid-template-columns: 1fr; }
   .dashboard-priority-row { grid-template-columns: 1fr; }
+  .dashboard-now-panel__item { border:1px solid var(--color-border); border-radius: var(--radius-md); padding: 0 var(--space-2); margin-bottom: var(--space-2); background: var(--color-surface); }
+  .dashboard-now-panel__item:last-child { margin-bottom:0; }
 }
 
 .dashboard-cockpit-hero { padding: 0; background: transparent; }
