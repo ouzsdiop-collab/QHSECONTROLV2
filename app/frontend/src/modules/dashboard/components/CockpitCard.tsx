@@ -28,10 +28,12 @@ export function CockpitCard({
           <h2 className="dashboard-cockpit-card__title">{title}</h2>
           {description ? <p className="muted dashboard-cockpit-card__description">{description}</p> : null}
         </div>
-        {statusLabel ? <StatusBadge label={statusLabel} variant={statusVariant} /> : null}
+        <div className="dashboard-cockpit-card__meta">
+          {statusLabel ? <StatusBadge label={statusLabel} variant={statusVariant} /> : null}
+          {actions ? <div className="dashboard-cockpit-card__actions">{actions}</div> : null}
+        </div>
       </header>
       <div className="dashboard-cockpit-card__content">{children}</div>
-      {actions ? <footer className="dashboard-cockpit-card__actions">{actions}</footer> : null}
     </article>
   );
 }
