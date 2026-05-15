@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import { DashboardActionPlan } from './DashboardActionPlan';
-import { DashboardAlerts } from './DashboardAlerts';
-import { DashboardCharts } from './DashboardCharts';
+import { DashboardAnalysisSection } from './DashboardAnalysisSection';
+import { DashboardCockpitHero } from './DashboardCockpitHero';
 import { DashboardExtendedIndicators } from './DashboardExtendedIndicators';
 import { DashboardFilters } from './DashboardFilters';
-import { DashboardHero } from './DashboardHero';
-import { DashboardKpis } from './DashboardKpis';
+import { DashboardInsightsPanel } from './DashboardInsightsPanel';
+import { DashboardKpiGrid } from './DashboardKpiGrid';
+import { DashboardNowPanel } from './DashboardNowPanel';
 import { DashboardQuickActions } from './DashboardQuickActions';
 import { KpiDetailDrawer } from './KpiDetailDrawer';
-import { PriorityPanel } from './PriorityPanel';
 import { dashboardService } from './dashboardService';
 import { DashboardData, DashboardFilterState, DashboardKpi } from './DashboardTypes';
 
@@ -24,24 +23,5 @@ export function DashboardPage() {
 
   if (!data) return <section><p>Chargement cockpit…</p></section>;
 
-  return <section>
-    <DashboardFilters filters={filters} periods={data.periods} sites={data.sites} services={data.services} onChange={setFilters} />
-    <DashboardHero
-      situation={data.score.situation}
-      trend={data.score.trend}
-      context={filters}
-      score={data.score}
-      metrics={data.heroMetrics}
-      onAction={(actionId) => setHeroFeedback(`Navigation cockpit préparée: ${actionId.replace('_', ' ')}`)}
-    />
-    {heroFeedback && <p className="muted section-gap">{heroFeedback}</p>}
-    <PriorityPanel items={data.priorities} />
-    <DashboardKpis kpis={data.kpis} onSelect={setSelectedKpi} />
-    <DashboardAlerts insights={data.insights} />
-    <DashboardActionPlan decisions={data.decisions} />
-    <DashboardQuickActions />
-    <DashboardCharts trend={data.incidentTrend6m} workload={data.workload} />
-    <DashboardExtendedIndicators indicators={data.extendedIndicators} recentActivity={data.recentActivity} />
-    <KpiDetailDrawer kpi={selectedKpi} readingMode={filters.readingMode} onClose={() => setSelectedKpi(null)} />
-  </section>;
+  return <section><DashboardFilters filters={filters} periods={data.periods} sites={data.sites} services={data.services} onChange={setFilters} /><DashboardCockpitHero situation={data.score.situation} trend={data.score.trend} context={filters} score={data.score} metrics={data.heroMetrics} onAction={(actionId) => setHeroFeedback(`Navigation cockpit préparée: ${actionId.replace('_', ' ')}`)} />{heroFeedback && <p className="muted section-gap">{heroFeedback}</p>}<DashboardNowPanel items={data.priorities} /><DashboardKpiGrid kpis={data.kpis} onSelect={setSelectedKpi} /><DashboardInsightsPanel insights={data.insights} /><DashboardAnalysisSection decisions={data.decisions} /><DashboardQuickActions /><DashboardExtendedIndicators indicators={data.extendedIndicators} recentActivity={data.recentActivity} /><KpiDetailDrawer kpi={selectedKpi} readingMode={filters.readingMode} onClose={() => setSelectedKpi(null)} /></section>;
 }
