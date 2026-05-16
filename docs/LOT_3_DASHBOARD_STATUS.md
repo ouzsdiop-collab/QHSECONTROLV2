@@ -87,3 +87,12 @@
   - action recommandée concise,
   - méta complète `site · service · délai · module`.
 - Colonne action droite clarifiée sur desktop avec bouton `Ouvrir` en pill, et fallback mobile en cartes compactes.
+
+
+## Lot 3E - Dashboard data and component contracts
+- Audit des composants signature (`CockpitCard`, `MetricCard`, `PriorityRow`, `ActionShortcut`, `InsightCard`, `DashboardSectionHeader`, `StatusBadge`) avec maintien du périmètre UI et sans refonte visuelle.
+- Stabilisation des types dashboard dans `DashboardTypes.ts` pour couvrir contexte, score, KPI, priorités, insights, ISO/SMI, pilotage étendu et activité récente.
+- Introduction d’un scénario mock métier unique `energyOilGasDemoScenario` (gaz/pétrole/énergie) dans `DashboardDemoScenarios.ts`.
+- Simplification de `DashboardMockData.ts` pour éviter les sources concurrentes et duplication de données.
+- Mise à jour de `dashboardService.ts` avec `getDashboardDemoData()` et point de bascule API explicite (sans appel réseau réel).
+- Documentation de contrats ajoutée: `docs/DASHBOARD_DATA_AND_COMPONENT_CONTRACTS.md`.
